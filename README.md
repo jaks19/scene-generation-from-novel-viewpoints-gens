@@ -29,9 +29,9 @@ with arguments matching our argparse header:
 ```
 parser.add_argument('--dataset', type=str, default='Labyrinth', help='dataset (dafault: Shepard-Mtzler)')
 parser.add_argument('--train_data_dir', type=str, help='location of training data', \
-                    default="/home/jaks19/mazes-torch/train")
+default="/home/jaks19/mazes-torch/train")
 parser.add_argument('--test_data_dir', type=str, help='location of test data', \
-                    default="/home/jaks19/mazes-torch/test")
+default="/home/jaks19/mazes-torch/test")
 parser.add_argument('--root_log_dir', type=str, help='root location of log', default='/home/jaks19/logs/')
 parser.add_argument('--log_dir', type=str, help='log directory (default: GQN)', default='GQN')
 parser.add_argument('--workers', type=int, help='number of data loading workers', default=32)
