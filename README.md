@@ -4,7 +4,7 @@ We investigate whether [Graph Element Networks](https://www.google.com/url?q=htt
 
 We sample 3D mazes from the [DeepMind Lab game platform](https://www.google.com/url?q=https%3A%2F%2Farxiv.org%2Fpdf%2F1612.03801.pdf&sa=D) ([dataset](https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fdeepmind%2Fgqn-datasets&sa=D)) and each maze comes with a series of images. Each image reveals how the maze appears, from a specific 2D coordinate and given a specific (yaw, pitch, roll) triple for the camera. 
 
-![GUI wrapper preview](https://github.com/jaks19/evolving-robotic-gripper/blob/master/gifs/scene.gif)
+![GUI wrapper preview](https://github.com/jaks19/scene-generation-from-novel-viewpoints-gens/blob/master/gifs/scene.gif)
 
 In the animation, we have  mazes placed in a 3x3 grid structure. The animation shows generated scenes on the left and a top-down view of the 9 mazes on the right. We first sample views from different places inside the mazes, and insert them into the GEN. We then query the GEN for the inferred view at new query coordinates, while rotating 360 degrees for each position. The red nodes (in the top-down map) are active nodes from which information is interpolated to generate a new view, for each query location.
 
