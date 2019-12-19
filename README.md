@@ -43,7 +43,7 @@ If you'd like the full dataset of images we used in our experiments, the followi
 
 * Download the dataset from [this google cloud bucket](https://console.cloud.google.com/storage/browser/gqn-dataset) (we used the dataset called 'mazes' and store the 'train' and 'test' folders in the same directory). Assume you call the downloaded data directory 'DIRNAME' for the next steps. 
 
-Note: This [guide]https://cloud.google.com/storage/docs/downloading-objects) provides standard help on downloading data from google cloud buckets.
+Note: This [guide](https://cloud.google.com/storage/docs/downloading-objects) provides standard help on downloading data from google cloud buckets.
 
 * The images you download span several '.tfrecord' files in the 'train' and 'test' folders. Run the code from 'convert.py' from our utils folder as
 ```convert.py DIRNAME``` to process the downloaded data from the 'DIRNAME' directory ('train' and 'test' folders) to convert all the .tfrecord files to .pt.gz files.
