@@ -18,36 +18,32 @@ How do we decode node states to draw scene images? This work was done to improve
 # Running experiments:
 
 ## Running our scene generation code 
-If you'd like to get the pipeline running before committing to downloading and processing huge amounts of data, we provided a few processed .pt files in the data_samples folder. These can be directly with our scene generation code:
+If you'd like to get the scene generation pipeline running before committing to downloading and processing huge amounts of data, we provided a few processed '.pt' (the format we use to read our image arrays) files in the data_samples folder. These can be used directly with our scene generation code:
 
-* Run our scene generation code by running 
+Run our scene generation code by running 
 ```
 python train_scene_rendering.py
 ```
-with arguments matching our argparse header:
+with arguments matching our argparse header (check the code for default values):
 ```
-'--dataset', type=str, default='Labyrinth', help='dataset (dafault: Shepard-Mtzler)'
-'--train_data_dir', type=str, help='location of training data', 
-default="/home/jaks19/mazes-torch/train")
-'--test_data_dir', type=str, help='location of test data', 
-default="/home/jaks19/mazes-torch/test")
-'--root_log_dir', type=str, help='root location of log', default='/home/jaks19/logs/'
-'--log_dir', type=str, help='log directory (default: GQN)', default='GQN'
-'--workers', type=int, help='number of data loading workers', default=32
-'--device_ids', type=int, nargs='+', help='list of CUDA devices (default: [0,1,2,3])', default=[0,1,2,3,4,5,6,7]
-'--layers', type=int, help='number of generative layers (default: 12)', default=8
-'--saved_model', type=str, help='path to model', default=None
+'--train_data_dir', type=str, help='location of training data'
+'--test_data_dir', type=str, help='location of test data'
+'--root_log_dir', type=str, help='root location of log'
+'--log_dir', type=str, help='log directory where you'd like log files to go'
+'--workers', type=int, help='number of data loading workers'
+'--device_ids', type=int, nargs='+', help='list of CUDA devices'
+'--layers', type=int, help='number of generative layers'
+'--saved_model', type=str, help='path to checkpointed model if you have trained one'
 ```
 **Note:**
-It took about a full week of non-stop training on 4 GPUs to generate the scenes shown in the animation. But we do better than the DeepMind GQN on many mazes put adjacent to each other (they perform well on one maze at a time, and their model fails with many mazes as their representation squashes all information onto the same representation). We are confident that the quality of our images can get much better with much more compute resources.
-
+It took about a full week of non-stop training on 4 GPUs to generate the scenes shown in the animation. We do better than the DeepMind GQN with many mazes stacked in a grid-like arrangement, as our model disentangled inputs based on their coordinates. We are confident that the quality of our images can get much better with more compute resources.
 
 ## Downloading the full dataset of images and pre-processing the data:
-If you'd like the full dataset of images we used in our experiments, the following steps are crucial.
+If you'd like the full dataset of images we used in our experiments, the following steps are helpful:
 
-* Download the dataset from [this google cloud bucket](https://console.cloud.google.com/storage/browser/gqn-dataset) (we used the dataset called 'mazes' and store the 'train' and 'test' folders in the same directory, assume you call this directory 'DIRNAME' for explanation purposes). 
+* Download the dataset from [this google cloud bucket](https://console.cloud.google.com/storage/browser/gqn-dataset) (we used the dataset called 'mazes' and store the 'train' and 'test' folders in the same directory). Assume you call the downloaded data directory 'DIRNAME' for the next steps. 
 
-This [guide]https://cloud.google.com/storage/docs/downloading-objects) provides standard help on downloading data from google cloud buckets.
+Note: This [guide]https://cloud.google.com/storage/docs/downloading-objects) provides standard help on downloading data from google cloud buckets.
 
 * The images you download span several '.tfrecord' files in the 'train' and 'test' folders. Run the code from 'convert.py' from our utils folder as
 ```convert.py DIRNAME``` to process the downloaded data from the 'DIRNAME' directory ('train' and 'test' folders) to convert all the .tfrecord files to .pt.gz files.
