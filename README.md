@@ -52,3 +52,25 @@ Note: Our file converter was adapted from the version provided by [iShohei220](h
 
 * Extract the .gz files and you will be left with .pt files. (e.g. aa.pt.gz -> aa.pt)
 For this standard extraction, you have several options listed [here](http://kb.winzip.com/kb/entry/124/).
+
+# Citing GENs
+If you use the Graph Element Network architecture in your research, please use the following BibTeX entry:
+
+@article{DBLP:journals/corr/abs-1904-09019,
+  author    = {Ferran Alet and
+               Adarsh K. Jeewajee and
+               Maria Bauz{\'{a}} and
+               Alberto Rodriguez and
+               Tom{\'{a}}s Lozano{-}P{\'{e}}rez and
+               Leslie Pack Kaelbling},
+  title     = {Graph Element Networks: adaptive, structured computation and memory},
+  journal   = {CoRR},
+  volume    = {abs/1904.09019},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1904.09019},
+  archivePrefix = {arXiv},
+  eprint    = {1904.09019},
+  timestamp = {Fri, 26 Apr 2019 13:18:53 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1904-09019},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
