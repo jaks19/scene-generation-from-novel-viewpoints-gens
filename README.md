@@ -56,7 +56,7 @@ For this standard extraction, you have several options listed [here](http://kb.w
 # Citing GENs
 If you use the Graph Element Network architecture in your research, please use the following BibTeX entry:
 
-@article{DBLP:journals/corr/abs-1904-09019,
+```@article{DBLP:journals/corr/abs-1904-09019,
   author    = {Ferran Alet and
                Adarsh K. Jeewajee and
                Maria Bauz{\'{a}} and
@@ -73,4 +73,4 @@ If you use the Graph Element Network architecture in your research, please use t
   timestamp = {Fri, 26 Apr 2019 13:18:53 +0200},
   biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1904-09019},
   bibsource = {dblp computer science bibliography, https://dblp.org}
-}
+}```
