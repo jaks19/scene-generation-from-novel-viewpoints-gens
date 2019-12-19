@@ -41,12 +41,14 @@ It took about a full week of non-stop training on 4 GPUs to generate the scenes 
 ## Downloading the full dataset of images and pre-processing the data:
 If you'd like the full dataset of images we used in our experiments, the following steps are helpful:
 
-* Download the dataset from [this google cloud bucket](https://console.cloud.google.com/storage/browser/gqn-dataset) (we used the dataset called 'mazes' and store the 'train' and 'test' folders in the same directory). Assume you call the downloaded data directory 'DIRNAME' for the next steps. 
+* Download the dataset from [this google cloud bucket](https://console.cloud.google.com/storage/browser/gqn-dataset) from Deepmind (we used the dataset called 'mazes' and store the 'train' and 'test' folders in the same directory). Assume you call the downloaded data directory 'DIRNAME' for the next steps. 
 
 Note: This [guide](https://cloud.google.com/storage/docs/downloading-objects) provides standard help on downloading data from google cloud buckets.
 
 * The images you download span several '.tfrecord' files in the 'train' and 'test' folders. Run the code from 'convert.py' from our utils folder as
 ```convert.py DIRNAME``` to process the downloaded data from the 'DIRNAME' directory ('train' and 'test' folders) to convert all the .tfrecord files to .pt.gz files.
+
+Note: Our file converter was adapted from the version provided by [iShohei220](https://github.com/iShohei220/torch-gqn/tree/master/dataset).
 
 * Extract the .gz files and you will be left with .pt files. (e.g. aa.pt.gz -> aa.pt)
 For this standard extraction, you have several options listed [here](http://kb.winzip.com/kb/entry/124/).
